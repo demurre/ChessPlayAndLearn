@@ -11,9 +11,12 @@ const App = () => {
       <div className="flex">
         <SideBar />
         <Routes>
-          <Route path="/learn" element={<LearnPage />} />
-          <Route path="/play" element={<PlayPage />} />
-          <Route path="/main" element={<MainPage />} />
+          <Route path="/">
+            <Route index element={<MainPage />} />
+            <Route path="/main" element={<MainPage />} />
+            <Route path="learn" element={<LearnPage />} />
+            <Route path="play" element={<PlayPage />} />
+          </Route>
         </Routes>
       </div>
     </Router>

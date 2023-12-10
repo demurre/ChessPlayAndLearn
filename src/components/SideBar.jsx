@@ -6,22 +6,22 @@ const SideBar = () => {
     <div className="flex">
       <div className="w-[111px] h-screen relative bg-neutral-900">
         <Link
-          to="/learn"
-          className="left-[12px] top-[515px] absolute text-white text-[32px] font-normal font-['Satoshi']"
+          to="/main"
+          className="left-[8px] top-[14px] absolute text-zinc-200 text-[32px] font-normal font-['Satoshi']"
         >
-          <button className="bg-transparent border-none">Learn</button>
+          <button className="hover:text-zinc-400">Chess</button>
         </Link>
         <Link
-          to="/main"
-          className="left-[8px] top-[14px] absolute text-white text-[32px] font-normal font-['Satoshi']"
+          to="/learn"
+          className="left-[12px] top-[515px] absolute text-zinc-200 text-[32px] font-normal font-['Satoshi']"
         >
-          <button className="bg-transparent border-none">Chess</button>
+          <button className="hover:text-zinc-400">Learn</button>
         </Link>
         <Link
           to="/play"
-          className="left-[22px] top-[467px] absolute text-white text-[32px] font-normal font-['Satoshi']"
+          className="left-[22px] top-[467px] absolute text-zinc-200 text-[32px] font-normal font-['Satoshi']"
         >
-          <button className="bg-transparent border-none">Play</button>
+          <button className="hover:text-zinc-400">Play</button>
         </Link>
       </div>
     </div>
