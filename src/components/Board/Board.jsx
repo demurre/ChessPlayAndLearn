@@ -1,5 +1,6 @@
 import { useAppContext } from "../../contexts/Context";
 import Pieces from "../Pieces/Pieces";
+import Popup from "../Popup/Popup";
 import Files from "./Files";
 import Ranks from "./Ranks";
 
@@ -31,7 +32,7 @@ const Board = () => {
   };
 
   return (
-    <div className="grid relative grid-cols-[25px] [800px] my-16 ml-20 w-[45%]">
+    <div className="grid relative grid-cols-[25px] [800px] my-14 ml-20 w-[45%]">
       <Ranks ranks={ranks} />
 
       <div className="grid grid-cols-8 grid-rows-8 w-[800px] h-[800px]">
@@ -46,6 +47,8 @@ const Board = () => {
       </div>
 
       <Pieces />
+
+      <Popup />
 
       <Files files={files} />
     </div>

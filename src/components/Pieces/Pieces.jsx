@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import Piece from "./Piece";
-import { copyPosition } from "../../helper";
 import { useAppContext } from "../../contexts/Context";
 import { clearCandidates, makeNewMove } from "../../reducer/actions/move";
+import arbiter from "../../arbiter/Arbites";
+import { openPromotion } from "../../reducer/actions/Popup";
 
 const Pieces = () => {
   const ref = useRef();
@@ -19,19 +20,34 @@ const Pieces = () => {
     return { x, y };
   };
 
-  const onDrop = (e) => {
-    e.preventDefault();
-    const newPosition = copyPosition(currentPosition);
-    const { x, y } = calculateCoords(e);
-    const [p, rank, file] = e.dataTransfer.getData("text").split(",");
+  const openPromotionBox = ({ rank, file, x, y }) =>
+    dispatch(openPromotion({ rank: Number(rank), file: Number(file), x, y }));
 
+  const move = (e) => {
+    const { x, y } = calculateCoords(e);
+    const [piece, rank, file] = e.dataTransfer.getData("text").split(",");
     if (appState.candidateMoves?.find((m) => m[0] === x && m[1] === y)) {
-      newPosition[Number(rank)][Number(file)] = "";
-      newPosition[x][y] = p;
+      if ((piece === "wp" && x === 7) || (piece === "bp" && x === 0)) {
+        openPromotionBox({ rank, file, x, y });
+        return;
+      }
+      const newPosition = arbiter.performMove({
+        position: currentPosition,
+        piece,
+        rank,
+        file,
+        x,
+        y,
+      });
       dispatch(makeNewMove({ newPosition }));
     }
-
     dispatch(clearCandidates());
+  };
+
+  const onDrop = (e) => {
+    e.preventDefault();
+
+    move(e);
   };
 
   const onDragOver = (e) => e.preventDefault();

@@ -1,8 +1,8 @@
 import { useReducer } from "react";
 import Board from "../components/Board/Board";
 import AppContext from "../contexts/Context";
-import { reducer } from "../reducer/reduser";
-import { initGameState } from "../constant";
+import { initGameState } from "../constants";
+import { reducer } from "../reducer/Reduser";
 
 const PlayPage = () => {
   const [appState, dispatch] = useReducer(reducer, initGameState);
