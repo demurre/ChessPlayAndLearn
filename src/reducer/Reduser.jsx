@@ -36,6 +36,28 @@ export const reducer = (state, action) => {
       };
     }
 
+    case ActionTypes.CAN_CASTLE: {
+      let { turn, castleDirection } = state;
+      castleDirection[turn] = action.payload;
+      return {
+        ...state,
+        castleDirection,
+      };
+    }
+
+    case ActionTypes.STALEMATE: {
+      return {
+        ...state,
+        status: Status.stalemate,
+      };
+    }
+
+    case ActionTypes.NEW_GAME: {
+      return {
+        ...action.payload,
+      };
+    }
+
     default:
       return state;
   }

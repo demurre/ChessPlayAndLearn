@@ -2,8 +2,10 @@ import { useRef } from "react";
 import Piece from "./Piece";
 import { useAppContext } from "../../contexts/Context";
 import { clearCandidates, makeNewMove } from "../../reducer/actions/move";
-import arbiter from "../../arbiter/Arbites";
+import arbiter from "../../arbiter/Arbiter";
 import { openPromotion } from "../../reducer/actions/Popup";
+import { getCastlingDirections } from "../../arbiter/GetMoves";
+import { detectStalemate, updateCastling } from "../../reducer/actions/Game";
 
 const Pieces = () => {
   const ref = useRef();
@@ -11,6 +13,18 @@ const Pieces = () => {
   const { appState, dispatch } = useAppContext();
 
   const currentPosition = appState.position[appState.position.length - 1];
+
+  const updateCastlingState = ({ piece, file, rank }) => {
+    const direction = getCastlingDirections({
+      castleDirection: appState.castleDirection,
+      piece,
+      file,
+      rank,
+    });
+    if (direction) {
+      dispatch(updateCastling(direction));
+    }
+  };
 
   const calculateCoords = (e) => {
     const { width, left, top } = ref.current.getBoundingClientRect();
@@ -26,11 +40,20 @@ const Pieces = () => {
   const move = (e) => {
     const { x, y } = calculateCoords(e);
     const [piece, rank, file] = e.dataTransfer.getData("text").split(",");
+
     if (appState.candidateMoves?.find((m) => m[0] === x && m[1] === y)) {
+      const opponent = piece.startsWith("b") ? "w" : "b";
+      const castleDirection =
+        appState.castleDirection[`${piece.startsWith("b") ? "w" : "b"}`];
+
       if ((piece === "wp" && x === 7) || (piece === "bp" && x === 0)) {
         openPromotionBox({ rank, file, x, y });
         return;
       }
+      if (piece.endsWith("r") || piece.endsWith("k")) {
+        updateCastlingState({ piece, rank, file });
+      }
+
       const newPosition = arbiter.performMove({
         position: currentPosition,
         piece,
@@ -40,6 +63,9 @@ const Pieces = () => {
         y,
       });
       dispatch(makeNewMove({ newPosition }));
+
+      if (arbiter.isStalemate(newPosition, opponent, castleDirection))
+        dispatch(detectStalemate());
     }
     dispatch(clearCandidates());
   };

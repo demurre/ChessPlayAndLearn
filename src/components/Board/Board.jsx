@@ -1,6 +1,10 @@
+import arbiter from "../../arbiter/Arbiter";
+import { getKingPosition } from "../../arbiter/GetMoves";
 import { useAppContext } from "../../contexts/Context";
 import Pieces from "../Pieces/Pieces";
+import GameEnds from "../Popup/GameEnds";
 import Popup from "../Popup/Popup";
+import PromotionBox from "../Popup/PromotionBox";
 import Files from "./Files";
 import Ranks from "./Ranks";
 
@@ -15,6 +19,17 @@ const Board = () => {
   const { appState } = useAppContext();
   const position = appState.position[appState.position.length - 1];
 
+  const isChecked = (() => {
+    const isInCheck = arbiter.isPlayerInCheck({
+      positionAfterMove: position,
+      player: appState.turn,
+    });
+
+    if (isInCheck) return getKingPosition(position, appState.turn);
+
+    return null;
+  })();
+
   const getClassName = (i, j) => {
     let classes = "tile";
 
@@ -28,6 +43,10 @@ const Board = () => {
         classes +=
           " after:absolute after:content-[''] after:w-[100px] after:h-[100px] after:rounded-[50%] after:bg-zinc-800 after:opacity-25";
     }
+
+    if (isChecked && isChecked[0] === i && isChecked[1] === j)
+      classes +=
+        " after:absolute after:content-[''] after:w-[100px] after:h-[100px] after:rounded-[50%] after:bg-red-600 after:opacity-50";
     return classes;
   };
 
@@ -48,7 +67,10 @@ const Board = () => {
 
       <Pieces />
 
-      <Popup />
+      <Popup>
+        <PromotionBox />
+        <GameEnds />
+      </Popup>
 
       <Files files={files} />
     </div>
