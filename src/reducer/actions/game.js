@@ -1,5 +1,5 @@
 import { initGameState } from "../../constants";
-import ActionTypes from "../ActionTypes";
+import ActionTypes from "../actionTypes";
 
 export const updateCastling = (direction) => {
   return { type: ActionTypes.CAN_CASTLE, payload: direction };
