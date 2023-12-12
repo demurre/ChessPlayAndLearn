@@ -3,7 +3,7 @@ import Piece from "./Piece";
 import { useAppContext } from "../../contexts/context";
 import { clearCandidates, makeNewMove } from "../../reducer/actions/move";
 import arbiter from "../../arbiter/arbiter";
-import { openPromotion } from "../../reducer/actions/Popup";
+import { openPromotion } from "../../reducer/actions/popup";
 import { getCastlingDirections } from "../../arbiter/getMoves";
 import {
   detectCheckmate,

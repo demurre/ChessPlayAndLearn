@@ -1,6 +1,6 @@
 import { useAppContext } from "../../contexts/context";
 import { Status } from "../../constants";
-import { closePopup } from "../../reducer/actions/Popup";
+import { closePopup } from "../../reducer/actions/popup";
 import React from "react";
 import "./Popup.css";
 
