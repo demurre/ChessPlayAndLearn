@@ -1,17 +1,17 @@
 import { useRef } from "react";
 import Piece from "./Piece";
-import { useAppContext } from "../../contexts/Context";
+import { useAppContext } from "../../contexts/context";
 import { clearCandidates, makeNewMove } from "../../reducer/actions/move";
-import arbiter from "../../arbiter/Arbiter";
+import arbiter from "../../arbiter/arbiter";
 import { openPromotion } from "../../reducer/actions/Popup";
-import { getCastlingDirections } from "../../arbiter/GetMoves";
+import { getCastlingDirections } from "../../arbiter/getMoves";
 import {
   detectCheckmate,
   detectInsufficientMaterial,
   detectStalemate,
   updateCastling,
-} from "../../reducer/actions/Game";
-import { getNewMoveNotation } from "../../Helper";
+} from "../../reducer/actions/game";
+import { getNewMoveNotation } from "../../helper";
 
 const Pieces = () => {
   const ref = useRef();

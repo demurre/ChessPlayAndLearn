@@ -1,5 +1,5 @@
-import arbiter from "../../arbiter/Arbiter";
-import { useAppContext } from "../../contexts/Context";
+import arbiter from "../../arbiter/arbiter";
+import { useAppContext } from "../../contexts/context";
 import { generateCandidateMoves } from "../../reducer/actions/move";
 
 const Piece = ({ rank, file, piece }) => {

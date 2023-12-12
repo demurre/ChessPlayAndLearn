@@ -1,4 +1,4 @@
-import { createPosition } from "./Helper";
+import { createPosition } from "./helper";
 
 export const Status = {
   ongoing: "Ongoing",

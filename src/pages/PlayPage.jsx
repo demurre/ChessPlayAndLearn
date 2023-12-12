@@ -1,8 +1,8 @@
 import { useReducer } from "react";
 import Board from "../components/Board/Board";
-import AppContext from "../contexts/Context";
+import AppContext from "../contexts/context";
 import { initGameState } from "../constants";
-import { reducer } from "../reducer/Reduser";
+import { reducer } from "../reducer/reduser";
 import Control from "../components/Control/Control";
 import MovesList from "../components/Control/MovesList";
 import TakeBack from "../components/Control/TakeBack";

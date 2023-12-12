@@ -1,4 +1,4 @@
-import { getCharacter } from "../../Helper";
+import { getCharacter } from "../../helper";
 
 const Files = ({ files }) => {
   return (

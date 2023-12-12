@@ -10,8 +10,8 @@ import {
   getPieces,
   getQueenMoves,
   getRookMoves,
-} from "./GetMoves";
-import { movePawn, movePiece } from "./Move";
+} from "./getMoves";
+import { movePawn, movePiece } from "./move";
 
 const arbiter = {
   getRegularMoves: function ({ position, piece, rank, file }) {

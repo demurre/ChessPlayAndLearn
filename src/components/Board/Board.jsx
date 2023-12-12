@@ -1,6 +1,6 @@
-import arbiter from "../../arbiter/Arbiter";
-import { getKingPosition } from "../../arbiter/GetMoves";
-import { useAppContext } from "../../contexts/Context";
+import arbiter from "../../arbiter/arbiter";
+import { getKingPosition } from "../../arbiter/getMoves";
+import { useAppContext } from "../../contexts/context";
 import Pieces from "../Pieces/Pieces";
 import GameEnds from "../Popup/GameEnds";
 import Popup from "../Popup/Popup";
