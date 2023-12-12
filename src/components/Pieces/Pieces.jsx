@@ -103,7 +103,7 @@ const Pieces = () => {
       ref={ref}
       onDrop={onDrop}
       onDragOver={onDragOver}
-      className="absolute left-[25px] right-0 top-0 bottom-[25px]"
+      className="absolute left-[25px] right-0 top-0 bottom-[0px]"
     >
       {currentPosition.map((r, rank) =>
         r.map((f, file) =>

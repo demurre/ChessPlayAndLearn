@@ -14,12 +14,15 @@ const PlayPage = () => {
 
   return (
     <AppContext.Provider value={providerState}>
-      <div className="w-screen h-screen relative bg-zinc-800 ">
+      <div className="w-screen h-screen relative bg-zinc-800 flex place-content-center ">
         <Board />
-        <Control>
-          <MovesList />
-          <TakeBack />
-        </Control>
+
+        <div className="flex col-2">
+          <Control>
+            <MovesList />
+            <TakeBack />
+          </Control>
+        </div>
       </div>
     </AppContext.Provider>
   );
