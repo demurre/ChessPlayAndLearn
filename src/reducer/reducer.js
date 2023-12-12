@@ -1,5 +1,5 @@
 import { Status } from "../constants";
-import ActionTypes from "./ActionTypes";
+import ActionTypes from "./actionTypes";
 
 export const reducer = (state, action) => {
   switch (action.type) {

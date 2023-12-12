@@ -1,4 +1,4 @@
-import { useAppContext } from "../../contexts/Context";
+import { useAppContext } from "../../contexts/context";
 import { Status } from "../../constants";
 import { closePopup } from "../../reducer/actions/Popup";
 import React from "react";
