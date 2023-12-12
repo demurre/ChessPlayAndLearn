@@ -6,8 +6,9 @@
   flex-wrap: wrap;
   align-content: start;
   overflow: auto;
-  max-height: 750px;
+  max-height: 765px;
   font-size: 16px;
+  margin-top: 55px;
 }
 .moves-list div {
   flex-basis: 35%;

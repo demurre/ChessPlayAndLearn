@@ -7,7 +7,7 @@ const TakeBack = () => {
   return (
     <div>
       <button
-        className="w-[150px] h-[40px] bg-yellow-800 rounded-[30px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-yellow-700 hover:shadow-md"
+        className="w-[150px] h-[40px] bg-yellow-800 rounded-[20px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-yellow-700 hover:shadow-md"
         onClick={() => dispatch(takeBack())}
       >
         Take Back

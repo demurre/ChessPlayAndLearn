@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   return (
     <div className="flex">
-      <div className="w-[111px] h-screen relative bg-neutral-900">
+      <div className="w-[111px] min-h-screen relative bg-neutral-900">
         <Link
           to="/main"
           className="left-[8px] top-[14px] absolute text-zinc-200 text-[32px] font-normal font-['Satoshi']"
