@@ -51,7 +51,7 @@ const Board = () => {
   };
 
   return (
-    <div className="grid relative grid-cols-[25px] [800px] my-14 ml-20 w-[45%]">
+    <div className="grid relative grid-cols-[25px_800px] w-[45%] ">
       <Ranks ranks={ranks} />
 
       <div className="grid grid-cols-8 grid-rows-8 w-[800px] h-[800px]">

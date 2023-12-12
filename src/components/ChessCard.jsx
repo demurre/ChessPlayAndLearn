@@ -16,7 +16,7 @@ const ChessCard = ({ name, preview, learn }) => {
           rel="noopener noreferrer"
           className="w-[236px] h-[57.77px] relative inline-block"
         >
-          <button className="w-full h-[40px] bg-zinc-300 rounded-[30px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-zinc-400 hover:shadow-md focus:border-gray-300 focus:outline-none focus:shadow-outline">
+          <button className="w-full h-[40px] bg-zinc-300 rounded-[30px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-zinc-400 hover:shadow-md">
             Learn
           </button>
         </a>

@@ -11,6 +11,7 @@ import {
   detectStalemate,
   updateCastling,
 } from "../../reducer/actions/Game";
+import { getNewMoveNotation } from "../../helper";
 
 const Pieces = () => {
   const ref = useRef();
@@ -67,7 +68,17 @@ const Pieces = () => {
         x,
         y,
       });
-      dispatch(makeNewMove({ newPosition }));
+
+      const newMove = getNewMoveNotation({
+        piece,
+        rank,
+        file,
+        x,
+        y,
+        position: currentPosition,
+      });
+
+      dispatch(makeNewMove({ newPosition, newMove }));
 
       if (arbiter.insufficientMaterial(newPosition))
         dispatch(detectInsufficientMaterial());

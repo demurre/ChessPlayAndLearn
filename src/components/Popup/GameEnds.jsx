@@ -22,7 +22,7 @@ const GameEnds = ({ onClosePopup }) => {
       <p>{!isWin && status}</p>
       <div className={`${status}`} />
       <button
-        className="w-[50%] h-[40px] bg-yellow-800 rounded-[30px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-yellow-700 hover:shadow-md focus:border-gray-300 focus:outline-none focus:shadow-outline"
+        className="w-[50%] h-[40px] bg-yellow-800 rounded-[30px] text-black text-[18px] font-normal font-['Satoshi'] hover:bg-yellow-700 hover:shadow-md"
         onClick={newGame}
       >
         New Game
