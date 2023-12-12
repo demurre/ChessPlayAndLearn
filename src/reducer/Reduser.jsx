@@ -52,6 +52,20 @@ export const reducer = (state, action) => {
       };
     }
 
+    case ActionTypes.INSUFFICIENT_MATERIAL: {
+      return {
+        ...state,
+        status: Status.insufficient,
+      };
+    }
+
+    case ActionTypes.WIN: {
+      return {
+        ...state,
+        status: action.payload === "w" ? Status.white : Status.black,
+      };
+    }
+
     case ActionTypes.NEW_GAME: {
       return {
         ...action.payload,
