@@ -18,40 +18,40 @@
 }
 
 .piece.bk {
-  background-image: url("src/assets/chessParts/bk.png");
+  background-image: url("/chessParts/bk.png");
 }
 .piece.bq {
-  background-image: url("src/assets/chessParts/bq.png");
+  background-image: url("/chessParts/bq.png");
 }
 .piece.br {
-  background-image: url("src/assets/chessParts/br.png");
+  background-image: url("/chessParts/br.png");
 }
 .piece.bb {
-  background-image: url("src/assets/chessParts/bb.png");
+  background-image: url("/chessParts/bb.png");
 }
 .piece.bn {
-  background-image: url("src/assets/chessParts/bn.png");
+  background-image: url("/chessParts/bn.png");
 }
 .piece.bp {
-  background-image: url("src/assets/chessParts/bp.png");
+  background-image: url("/chessParts/bp.png");
 }
 .piece.wk {
-  background-image: url("src/assets/chessParts/wk.png");
+  background-image: url("/chessParts/wk.png");
 }
 .piece.wq {
-  background-image: url("src/assets/chessParts/wq.png");
+  background-image: url("/chessParts/wq.png");
 }
 .piece.wr {
-  background-image: url("src/assets/chessParts/wr.png");
+  background-image: url("/chessParts/wr.png");
 }
 .piece.wb {
-  background-image: url("src/assets/chessParts/wb.png");
+  background-image: url("/chessParts/wb.png");
 }
 .piece.wn {
-  background-image: url("src/assets/chessParts/wn.png");
+  background-image: url("/chessParts/wn.png");
 }
 .piece.wp {
-  background-image: url("src/assets/chessParts/wp.png");
+  background-image: url("/chessParts/wp.png");
 }
 .piece.p-07 {
   transform: translate(0%, 0%);
