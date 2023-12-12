@@ -1,8 +1,8 @@
-import "./Popup.css";
 import { useAppContext } from "../../contexts/Context";
 import { Status } from "../../constants";
 import { closePopup } from "../../reducer/actions/Popup";
 import React from "react";
+import "./Popup.css";
 
 const Popup = ({ children }) => {
   const {

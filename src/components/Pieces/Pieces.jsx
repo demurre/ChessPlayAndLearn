@@ -11,7 +11,7 @@ import {
   detectStalemate,
   updateCastling,
 } from "../../reducer/actions/Game";
-import { getNewMoveNotation } from "../../helper";
+import { getNewMoveNotation } from "../../Helper";
 
 const Pieces = () => {
   const ref = useRef();
