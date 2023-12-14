@@ -6,7 +6,7 @@ const SideBar = () => {
     <div className="flex">
       <div className="w-[111px] min-h-screen relative bg-neutral-900">
         <Link
-          to="/main"
+          to="/"
           className="left-[8px] top-[14px] absolute text-zinc-200 text-[32px] font-normal font-['Satoshi']"
         >
           <button className="hover:text-zinc-400">Chess</button>

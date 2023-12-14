@@ -12,7 +12,6 @@ const App = () => {
         <SideBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/main" element={<MainPage />} />
           <Route path="/learn" element={<LearnPage />} />
           <Route path="/play" element={<PlayPage />} />
         </Routes>
