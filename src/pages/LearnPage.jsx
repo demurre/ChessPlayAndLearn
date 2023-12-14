@@ -1,5 +1,5 @@
 import { chessTerms, openings } from "../assets/store";
-import { CardList } from "../components/CartList";
+import { CardList } from "../components/CardList";
 
 const LearnPage = () => {
   return (

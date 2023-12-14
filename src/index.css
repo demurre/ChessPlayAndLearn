@@ -1,9 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+@import url("https://fonts.cdnfonts.com/css/satoshi");
 
 * {
-  font-family: "Satoshi";
+  font-family: "Satoshi", "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
